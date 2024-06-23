@@ -2,10 +2,18 @@ body {
     background-color: #1B1B25 !important;
     /* background-image: linear-gradient(to bottom, #0d6e6a, #000000); */
     font-family: Arial, sans-serif !important;
-    padding: 20px 0 20px 0;
+    /* padding: 20px 0 20px 0; */
 
 
-    h1,
+    button:focus {
+        outline: none;
+        box-shadow: none !important;
+    }
+
+    button:hover {
+        color: #1B1B25 !important;
+    }
+
     h4,
     p {
         color: whitesmoke;
@@ -20,7 +28,45 @@ body {
         text-align: justify;
     }
 
-    .wrapper {
+    .header-container {
+        background-color: white;
+
+        header {
+            background-color: white;
+
+            .main-header {
+                display: flex;
+                align-items: center;
+
+                .profile-img {
+                    width: 40%;
+                    opacity: 0;
+                    transform: translateY(-50px);
+                    transition: opacity 0.5s, transform 0.5s;
+                }
+
+                h1 {
+                    opacity: 0;
+                    transform: translateY(50px);
+                    transition: opacity 0.5s, transform 0.5s;
+
+                }
+            }
+
+            .main-header.loaded .profile-img {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .main-header.loaded h1 {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+
+    .main-wrapper {
 
         .main-background {
             display: flex;
@@ -37,22 +83,13 @@ body {
 
             }
 
-
-            .profile-img {
-                width: 40%;
-                border: 2px solid black;
-                border-radius: 64%;
-
-            }
-
         }
 
 
         .accordion-container {
-
             gap: 20px;
             display: grid;
-            margin-bottom: 9%;
+            margin-bottom: 7%;
 
 
             .card-wrapper {
@@ -64,6 +101,9 @@ body {
 
                     .open-accordion {
                         color: whitesmoke;
+                        width: 100%;
+                        height: 100%;
+                        text-align: justify;
                     }
 
                     .arrow {
@@ -86,10 +126,31 @@ body {
             }
         }
 
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 10px;
+            margin-bottom: 7%;
+
+
+            .item {
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+        }
+
+
+
         footer {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+
             p {
                 color: whitesmoke !important;
                 margin-bottom: unset;
