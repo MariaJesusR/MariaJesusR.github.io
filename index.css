@@ -205,4 +205,22 @@ body {
 
         align-items: flex-end !important;
     }
+
 }
+
+@media screen and (max-width: 767px) {
+    .accordion-container {
+        gap: 0px !important;
+
+        .space{
+            margin-bottom: 4%
+        }
+    }
+}
+
+@media screen and (max-width: 579px) {
+    footer {
+        align-items: unset !important;
+    }
+}
+
